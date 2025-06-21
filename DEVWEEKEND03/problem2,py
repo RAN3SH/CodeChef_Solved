@@ -1,0 +1,15 @@
+import os
+
+def list_applications():
+    filename = "applications.txt"
+    if not os.path.exists(filename):
+        print("No applications found.\n")
+        return
+    with open(filename, "r") as file:
+        content = file.read().strip()
+
+        if not content:
+            print("No applications found.\n")
+        else:
+            print("\n--- All Job Applications ---")
+            print(content + "\n")
